@@ -77,13 +77,11 @@ You can also do the same for MetaMask. Make sure to purchase higher amounts of t
 
 Deploy the crowdsale to the Kovan or Ropsten testnet, and store the deployed address for later. Switch MetaMask to your desired network, and use the `Deploy` tab in Remix to deploy your contracts. Take note of the total gas cost, and compare it to how costly it would be in reality. Since you are deploying to a network that you don't have control over, faucets will not likely give out 300 test Ether. You can simply reduce the goal when deploying to a testnet to an amount much smaller, like 10,000 wei.
 
-### Submission
-
-Create a Github repo, and a `README.md` file explaining the process for purchasing PupperCoin (or whatever name you came up with).
-
-Also, please provide screenshots to illustrate the functionality (e.g. how you send Ether to the contract, how you add the token to MyCrypto and test a transaction, and how you test the time functionality etc.). Alternatively, you can also record your interactions with the contract as a gif (e.g. https://www.screentogif.com/)
-
-
-Ensure that anyone can run the steps and add the token to MyCrypto, or a similar wallet.
-
-Include information such as the token parameters, token name, crowdsale cap, etc.
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-8.PNG)
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-9.PNG)
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-10.PNG)
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-11.PNG)
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-12.PNG)
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-13.PNG)
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-14.PNG)
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-15.PNG)
