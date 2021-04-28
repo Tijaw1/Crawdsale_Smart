@@ -1,13 +1,13 @@
 # Crawdsale_Smart
 
-![crowd](Images/crowd.png)
+![crowd](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/crowd.png)
 
 ## Background
 
-Your company has decided to crowdsale their PupperCoin token in order to help fund the network development.
+A company has decided to crowdsale their PupperCoin token in order to help fund the network development.
 This network will be used to track the dog breeding activity across the globe in a decentralized way, and allow humans to track the genetic trail of their pets. You have already worked with the necessary legal bodies and have the green light on creating a crowdsale open to the public. However, you are required to enable refunds if the crowdsale is successful and the goal is met, and you are only allowed to raise a maximum of 300 Ether. The crowdsale will run for 24 weeks.
 
-You will need to create an ERC20 token that will be minted through a `Crowdsale` contract that you can leverage from the OpenZeppelin Solidity library.
+ERC20 token will be minted through a `Crowdsale` contract that can leverage from the OpenZeppelin Solidity library.
 
 This crowdsale contract will manage the entire process, allowing users to send ETH and get back PUP (PupperCoin).
 This contract will mint the tokens automatically and distribute them to buyers in one transaction.
@@ -18,27 +18,15 @@ You will conduct the crowdsale on the Kovan or Ropsten testnet in order to get a
 
 ## Instructions
 
-### Creating your project
-
-Using Remix, create a file called `PupperCoin.sol` and create a standard `ERC20Mintable` token. Since you're already an expert at this, you can simply use this [starter code](../Starter-Code/PupperCoin.sol).
-
-Create a new contract named `PupperCoinCrowdsale.sol`, and prepare it like a standard crowdsale.
-
 ### Designing the contracts
 
 #### ERC20 PupperCoin
 
-You will need to simply use a standard `ERC20Mintable` and `ERC20Detailed` contract, hardcoding `18` as the `decimals` parameter, and leaving the `initial_supply` parameter alone.
-
-You don't need to hardcode the decimals, however since most use-cases match Ethereum's default, you may do so.
-
-Simply fill in the `PupperCoin.sol` file with this [starter code](../Starter-Code/PupperCoin.sol), which contains the complete contract you'll need to work with in the Crowdsale.
+Use a standard `ERC20Mintable` and `ERC20Detailed` contract, hardcoding `18` as the `decimals` parameter, and leaving the `initial_supply` parameter alone.
 
 #### PupperCoinCrowdsale
 
-Leverage the [Crowdsale](../Starter-Code/Crowdsale.sol) starter code, saving the file in Remix as `Crowdsale.sol`.
-
-You will need to bootstrap the contract by inheriting the following OpenZeppelin contracts:
+Bootstrap the contract by inheriting the following OpenZeppelin contracts:
 
 * `Crowdsale`
 
@@ -50,9 +38,9 @@ You will need to bootstrap the contract by inheriting the following OpenZeppelin
 
 * `RefundablePostDeliveryCrowdsale`
 
-You will need to provide parameters for all of the features of your crowdsale, such as the `name`, `symbol`, `wallet` for fundraising, `goal`, etc. Feel free to configure these parameters to your liking.
+Provide parameters for all of the features of the crowdsale, such as the `name`, `symbol`, `wallet` for fundraising, `goal`, etc. Feel free to configure these parameters to your liking.
 
-You can hardcode a `rate` of 1, to maintain parity with Ether units (1 TKN per Ether, or 1 TKNbit per wei). If you'd like to customize your crowdsale rate, follow the [Crowdsale Rate](https://docs.openzeppelin.com/contracts/2.x/crowdsales#crowdsale-rate) calculator on OpenZeppelin's documentation. Essentially, a token (TKN) can be divided into TKNbits just like Ether can be divided into wei. When using a `rate` of 1, just like 1000000000000000000 wei is equal to 1 Ether, 1000000000000000000 TKNbits is equal to 1 TKN.
+The `rate` can be hard codded to 1, to maintain parity with Ether units (1 TKN per Ether, or 1 TKNbit per wei). If you'd like to customize your crowdsale rate, follow the [Crowdsale Rate](https://docs.openzeppelin.com/contracts/2.x/crowdsales#crowdsale-rate) calculator on OpenZeppelin's documentation. Essentially, a token (TKN) can be divided into TKNbits just like Ether can be divided into wei. When using a `rate` of 1, just like 1000000000000000000 wei is equal to 1 Ether, 1000000000000000000 TKNbits is equal to 1 TKN.
 
 Since `RefundablePostDeliveryCrowdsale` inherits the `RefundableCrowdsale` contract, which requires a `goal` parameter, you must call the `RefundableCrowdsale` constructor from your `PupperCoinCrowdsale` constructor as well as the others. `RefundablePostDeliveryCrowdsale` does not have its own constructor, so just use the `RefundableCrowdsale` constructor that it inherits.
 
@@ -64,6 +52,8 @@ When passing the `open` and `close` times, use `now` and `now + 24 weeks` to set
 
 In this contract, you will model the deployment based off of the `ArcadeTokenCrowdsaleDeployer` you built previously. Leverage the [OpenZeppelin Crowdsale Documentation](https://docs.openzeppelin.com/contracts/2.x/crowdsales) for an example of a contract deploying another, as well as the starter code provided in [Crowdsale.sol](../Starter-Code/Crowdsale.sol).
 
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-1.PNG)
+
 ### Testing the Crowdsale
 
 Test the crowdsale by sending Ether to the crowdsale from a different account (**not** the same account that is raising funds), then once you confirm that the crowdsale works as expected, try to add the token to MyCrypto and test a transaction. You can test the time functionality by replacing `now` with `fakenow`, and creating a setter function to modify `fakenow` to whatever time you want to simulate. You can also set the `close` time to be `now + 5 minutes`, or whatever timeline you'd like to test for a shorter crowdsale.
@@ -74,7 +64,12 @@ Remember, the refund feature of `RefundablePostDeliveryCrowdsale` only allows fo
 
 You can add custom tokens in MyCrypto from the `Add custom token` feature:
 
-![add-custom-token](https://i.imgur.com/p1wwXQ9.png)
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-2.PNG)
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-3.PNG)
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-4.PNG)
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-5.PNG)
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-6.PNG)
+![PupperCoinCrowdsaleDeployer](https://github.com/Tijaw1/Crawdsale_Smart/blob/main/ScreenShots/21-7.PNG)
 
 You can also do the same for MetaMask. Make sure to purchase higher amounts of tokens in order to see the denomination appear in your wallets as more than a few wei worth.
 
