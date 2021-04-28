@@ -29,9 +29,9 @@ contract PupperCoinSale is Crowdsale, MintedCrowdsale, CappedCrowdsale, TimedCro
         // Pass the constructor parameters to the crowdsale contracts
         Crowdsale(rate, wallet, token)
         CappedCrowdsale(goal)
-        // TimedCrowdsale(now, now + 24 weeks)
+        TimedCrowdsale(now, now + 24 weeks)
         // fakenow parameter to be used for testing purposes only
-        TimedCrowdsale(fakenow, fakenow + 1 minutes)
+        // TimedCrowdsale(fakenow, fakenow + 1 minutes)
 
         RefundableCrowdsale(goal)
         
@@ -61,10 +61,10 @@ contract PupperCoinSaleDeployer {
         token_address = address(token);
 
         // create PupperCoinSale and set the goal, and set the open and close times to now and now + 24 weeks.
-        // PupperCoinSale pupper_token = new PupperCoinSale(1, wallet, token, goal, now, now + 24 weeks);
+        PupperCoinSale pupper_token = new PupperCoinSale(1, wallet, token, goal, now, now + 24 weeks);
         
         // for testing purposes, use the fakenow parameter as open time and fakenow + 5 minutes as close time
-        PupperCoinSale pupper_token = new PupperCoinSale(1, wallet, token, goal, fakenow, fakenow + 1 minutes);
+        // PupperCoinSale pupper_token = new PupperCoinSale(1, wallet, token, goal, fakenow, fakenow + 1 minutes);
         
         token_sale_address = address(pupper_token);
 
